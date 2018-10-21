@@ -1,0 +1,87 @@
+.defaultForm {
+    min-width: 340px;
+    max-width: 340px;
+    padding: 20px;
+
+    &-box {
+        margin-bottom: 20px;
+    }
+
+    &-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &__button {
+            font-size: 16px;
+            line-height: 20px;
+            color: $color_8;
+            border: none;
+            background: $color_7;
+            min-width: 120px;
+            text-align: center;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 7px 10px;
+            margin: 10px;
+
+            &:hover {
+                background: $color_9;
+            }
+
+            &_cancel {
+                color: $color_3;
+                background: $color_11;
+
+                &:hover {
+                    color: $color_8;
+                }
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        border: 1px solid $color_5;
+        color: $color_6;
+        padding: 8.5px 35px 8.5px 8px;
+        margin-bottom: 20px;
+
+        @include placeholder {
+            color: $color_6
+        }
+    }
+
+    &__textarea {
+        display: block;
+        width: 100%;
+        resize: vertical;
+        min-height: 80px;
+        border: 1px solid $color_5;
+        color: $color_6;
+        padding: 8.5px 35px 8.5px 8px;
+        margin-bottom: 10px;
+
+        @include placeholder {
+            color: $color_6;
+        }
+    }
+
+    @include mobile {
+        min-width: 300px;
+    }
+}

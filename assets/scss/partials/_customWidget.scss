@@ -1,0 +1,20 @@
+.customWidget {
+    width: 100%;
+    padding: 5px;
+    margin: 0 0 10px;
+    background: lighten($color_6, 20%);
+    color: $color_3;
+    transform: initial;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &__title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+    &__description {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}

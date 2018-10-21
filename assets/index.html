@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Directum test task (JavaScript)</title>
+</head>
+
+<body>
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <main class="modal__content" id="modal-1-content">
+
+                    <div class="defaultForm" id="addWidgetForm">
+
+                        <div class="defaultForm__title">
+                            Добавить виджет
+                            <span class="defaultForm__close" data-micromodal-close>Закрыть</span>
+                        </div>
+
+                        <input type="text" class="defaultForm__input" id="titleValue" placeholder="Заголовок">
+
+                        <input type="text" class="defaultForm__input" id="colorValue" placeholder="Цвет виджета (#000000)">
+
+                        <div class="defaultForm-box">
+                            Колонка:
+                            <select id="columnNumber">
+                                <option value="0">Первая</option>
+                                <option value="1">Вторая</option>
+                                <option value="2">Третья</option>
+                            </select>
+                        </div>
+
+                        <textarea class="defaultForm__textarea" placeholder="Описание виджета" id="descriptionValue"></textarea>
+
+                        <div class="defaultForm-buttons">
+                            <button type="button" class="defaultForm-buttons__button js-addWidget">Добавить</button>
+                            <button type="button" class="defaultForm-buttons__button defaultForm-buttons__button_cancel"
+                                data-micromodal-close>Отмена</button>
+                        </div>
+
+                        <div class="defaultForm-help" id="superHelp">
+                            <div class="defaultForm-help__text">Ни одно из текстовых полей не заполнено!</div>
+                        </div>
+
+                    </div>
+                    <!-- defaultForm -->
+
+                </main>
+            </div>
+        </div>
+    </div>
+    <!-- modal-1 -->
+
+    <div class="modal micromodal-slide" id="modal-2" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+                <main class="modal__content" id="modal-1-content">
+
+                    <div class="defaultForm" id="addWidgetForm">
+
+                        <div class="defaultForm__title">
+                            Добавить виджет с API
+                            <span class="defaultForm__close" data-micromodal-close>Закрыть</span>
+                        </div>
+
+                        <input type="text" class="defaultForm__input" id="exchangeRate" placeholder="Курс валюты в рублях">
+
+                        <div class="defaultForm-box">
+                            Колонка:
+                            <select id="columnNumber">
+                                <option value="0">Первая</option>
+                                <option value="1">Вторая</option>
+                                <option value="2">Третья</option>
+                            </select>
+                        </div>
+
+                        <textarea class="defaultForm__textarea" placeholder="Описание виджета" id="descriptionValue"></textarea>
+
+                        <div class="defaultForm-buttons">
+                            <button type="button" class="defaultForm-buttons__button js-addWidget">Добавить</button>
+                            <button type="button" class="defaultForm-buttons__button defaultForm-buttons__button_cancel"
+                                data-micromodal-close>Отмена</button>
+                        </div>
+
+                    </div>
+                    <!-- defaultForm -->
+
+                </main>
+            </div>
+        </div>
+    </div>
+    <!-- modal-2 -->
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="row" id="widgetColumns">
+
+                <div class="col-12 col-md-4 defaultColumn">
+                    <div class="defaultColumn__inner widgetsContainer" id="sortable1"></div>
+                </div>
+                <div class="col-12 col-md-4 defaultColumn">
+                    <div class="defaultColumn__inner widgetsContainer" id="sortable2"></div>
+                </div>
+                <div class="col-12 col-md-4 defaultColumn">
+                    <div class="defaultColumn__inner widgetsContainer" id="sortable3"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <button type="button" data-micromodal-trigger="modal-1" class="btn btn-primary">Добавить
+                виджет</button>
+            <button type="button" data-micromodal-trigger="modal-2" class="btn btn-primary">Добавить виджет с API</button>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
+    <script src="./js/main.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</body>
+
+</html>
