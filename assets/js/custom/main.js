@@ -10,6 +10,12 @@ MicroModal.init({
 
 let newWidget = new CustomWidget;
 
+$('#exchangeRate').on('keyup', function () {
+    let aaa = $(this).val();
+
+    newWidget.getExchange(aaa);
+});
+
 $('.js-addWidget').on('click', function () {
     /**
      * Кнопка добавления виджета
@@ -20,23 +26,22 @@ $('.js-addWidget').on('click', function () {
     let titleValue = parentForm.find('#titleValue').val();
     let backgroundValue = parentForm.find('#colorValue').val();
     let descriptionValue = parentForm.find('#descriptionValue').val();
-    let exchangeRate = parentForm.find('#exchangeRate').val();
-
+    if(window.currency){
+        let exchangeRate = window.currency.toFixed();
+        parameters.exchange = exchangeRate;
+        window.currency = null;
+    }
+    
     parameters.title = titleValue;
     parameters.background = backgroundValue;
     parameters.description = descriptionValue;
     parameters.column = columnNumber;
-    parameters.exchange = exchangeRate;
+    
 
     newWidget.addWidget(columnNumber, parameters);
+
     $('.defaultForm__close').trigger('click');
 
-});
-
-$('js-addApiWidget').on('click', function () {
-    let columnNumber = parentForm.find('#columnNumber').val();
-
-    newWidget.addApiWidget(columnNumber, parameters);
 });
 
 $(document).on('click', '.js-removeWidget', function () {
@@ -48,7 +53,7 @@ $(document).on('click', '.js-removeWidget', function () {
 
 
 $(function () {
-    
+
     $(".widgetsContainer").sortable({
         connectWith: ".widgetsContainer",
     });
